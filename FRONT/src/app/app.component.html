@@ -1,0 +1,42 @@
+<!-- Barra de ferramentas -->
+<mat-toolbar color="primary">
+  <button class="menu" mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon> menu </mat-icon>
+  </button>
+  <span>Gerenciamento de Tarefas</span>
+</mat-toolbar>
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidenav [opened]="true" mode="side">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/pages/tarefa/listar">
+        <div class="item">
+          <mat-icon class="icon"> list </mat-icon>
+          <span> Listar Tarefas </span>
+        </div>
+      </a>
+      <a mat-list-item routerLink="/pages/tarefa/cadastrar">
+        <div class="item">
+          <mat-icon class="icon"> add </mat-icon>
+          <span> Cadastrar Tarefas </span>
+        </div>
+      </a>
+      <a mat-list-item routerLink="/pages/tarefa/concluida">
+        <div class="item">
+          <mat-icon class="icon"> list </mat-icon>
+          <span> Concluidas </span>
+        </div>
+      </a>
+      <a mat-list-item routerLink="/pages/tarefa/naoConcluida">
+        <div class="item">
+          <mat-icon class="icon"> list </mat-icon>
+          <span> Não Concluidas </span>
+        </div>
+      </a>
+    </mat-nav-list>
+    <!-- <a routerLink="/pages/produto/cadastrar"> Cadastrar </a> -->
+  </mat-sidenav>
+  <mat-sidenav-content class="content">
+    <!-- Conteúdo -->
+    <router-outlet> </router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
